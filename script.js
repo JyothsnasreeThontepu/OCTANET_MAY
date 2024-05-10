@@ -17,13 +17,11 @@ function addTodo(event) {
     newTodo.classList.add("todo-item");
     todoDiv.appendChild(newTodo);
 
-    // Priority field
     const priorityInput = document.createElement("input");
     priorityInput.setAttribute("type", "checkbox");
     priorityInput.classList.add("priority-checkbox");
     todoDiv.appendChild(priorityInput);
-
-    // Due date field
+ 
     const dueDateInput = document.createElement("input");
     dueDateInput.setAttribute("type", "date");
     dueDateInput.classList.add("due-date-input");
@@ -49,11 +47,9 @@ function deleteCheck(e) {
     if (item.classList[0] === "trash-btn") {
         const todo = item.parentElement;
         todo.classList.add("slide");
-
-        // Remove from local storage
+    
         removeLocalTodos(todo);
-
-        // Remove priority and due date fields
+   
         const priorityInput = todo.querySelector(".priority-checkbox");
         const dueDateInput = todo.querySelector(".due-date-input");
         if (priorityInput) priorityInput.remove();
@@ -121,13 +117,13 @@ function getLocalTodos() {
         newTodo.classList.add("todo-item");
         todoDiv.appendChild(newTodo);
 
-        // Priority field
+       
         const priorityInput = document.createElement("input");
         priorityInput.setAttribute("type", "checkbox");
         priorityInput.classList.add("priority-checkbox");
         todoDiv.appendChild(priorityInput);
 
-        // Due date field
+        
         const dueDateInput = document.createElement("input");
         dueDateInput.setAttribute("type", "date");
         dueDateInput.classList.add("due-date-input");
